@@ -6,7 +6,9 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: (window as any).__POWERED_BY_QIANKUN__ ? "/app-vue2/" : "/",
+    path: (window as any).__POWERED_BY_QIANKUN__
+      ? process.env.VUE_APP_MiCRO_ROUTER
+      : "/",
     name: "Home",
     component: Home,
     children: [

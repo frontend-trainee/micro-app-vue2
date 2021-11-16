@@ -1,6 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { name } = require("./package");
 module.exports = {
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? process.env.VUE_APP_PUBLIC_PATH
+      : "/",
   devServer: {
     headers: {
       "Access-Control-Allow-Origin": "*",
